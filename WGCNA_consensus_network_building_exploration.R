@@ -1,8 +1,8 @@
 library(WGCNA)
 library(dplyr)
 library(purrr)
-library(expss, lib.loc= perlib)
-library(mgsub, lib.loc= perlib)
+library(expss)
+library(mgsub)
 source("/path/to/function.R")
 options(stringsAsFactors = FALSE);
 
@@ -26,7 +26,7 @@ Dataname = map(Dataname, function(x) filter(x, x[,1] %in% template))
 }
 
 nSets = length(dd)
-setLabels = c("V.Amurensis","TBianca", "TMgaloblishvilii", "TPinot")
+setLabels = c("V.Amurensis","Bianca", "Mgaloblishvilii", "Pinot")
 setNames = c("Rpv_Vv_VAG","TB_Rpv3_Trinity", "TM_Trinity", "TP")
 # shortLabels = c("Tof", "Rpv12", "PNTh")
 shortLabels = c("TB", "TM", "TP", "Rpv", "PN")
