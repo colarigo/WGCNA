@@ -58,9 +58,16 @@ def timer(start,end):
 
 #Declaration of essential elements
 chunk_size = 500
+##### Beginning of instructions ######
+usage = """
+-i path to file containing protein sequence to annotate
+-o directory where results are stored
+-t number of cpu use for the whole analysis, will be divided for parallelization speeding up analysis
+-job number of job running in parallel default = 4
+"""
 parser = argparse.ArgumentParser(usage=usage)
 
-parser.add_argument("-i", "--input", dest="f_in", default="/path/to/fasta_file", type =pl.Path, help="path to files containing protein sequence to annotate")
+parser.add_argument("-i", "--input", dest="f_in", default="/path/to/fasta_file", type =pl.Path, help="path to file containing protein sequence to annotate")
 parser.add_argument("-o", "--ouput", dest="f_out", default=None , type = pl.Path, help="directory where results are stored", required = True)
 parser.add_argument("-t", "--threads", dest="nb_threads", default= 12, type = int, help="Number of cpu use per job, Default = 12 cpu")
 parser.add_argument("-j", "--job", dest="nb_job", default= 4, type = int, help="Number job run in parallel, Default = 4")
